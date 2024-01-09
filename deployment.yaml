@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springDeploy
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: spring
+  template:
+    metadata:
+      labels:
+        app: spring
+    spec:
+      containers:
+      - name: spring
+        image: adamchouk23/arkamimage:1.0
+        ports:
+        - containerPort: 80  # Adjust the port as needed
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springSvc
+spec:
+  selector:
+    app: spring
+  ports:
+    - protocol: TCP
+      port: 80  # Expose the port your application is listening on
+      targetPort: 80  # The port your containers are listening on
+  type: ClusterIP  # Adjust the service type as needed

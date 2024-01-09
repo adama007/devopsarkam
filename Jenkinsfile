@@ -11,7 +11,7 @@ pipeline {
     environment {
         // Initialize global variables here
         APP_NAME = "arkamimage"
-        DOCKER_USER = "arkamabdelbari"
+        DOCKER_USER = "adamchouk23"
         DOCKER_PASS = "dockerhub"
         IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
         IMAGE_TAG = '1.0'   
@@ -26,7 +26,7 @@ pipeline {
     
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/ArkamAbdelbari/pipeproject'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/adama007/devopsarkam.git'
             }
         }
 
@@ -54,4 +54,3 @@ pipeline {
         }
     }
 }
-//dckr_pat_bpdQxhwZS4ELNRUBQ2JtzLqgGJU
