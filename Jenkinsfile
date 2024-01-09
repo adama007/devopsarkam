@@ -3,10 +3,13 @@ pipeline {
         label "built-in"
     }
     
-    tools {
-        jdk 'Java17'
-        maven 'Maven3'
-    }
+   
+tools {
+    jdk 'java 17'  // Use lowercase 'java' and specify the version as '17'
+    maven 'maven 3' // Use lowercase 'maven' and specify the version as '3'
+}
+
+    
 
     environment {
         // Initialize global variables here
