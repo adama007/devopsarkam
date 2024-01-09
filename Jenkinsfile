@@ -28,11 +28,11 @@ tools {
         }
     
         stage("Checkout from SCM") {
-            steps {timeout(time: 10, unit: 'MINUTES'){
+            steps {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/adama007/devopsarkam.git'
             }
         }
-        }
+
         stage("Build Application") {
             steps {
                 sh "mvn clean package"
